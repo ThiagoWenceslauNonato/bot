@@ -1,9 +1,9 @@
 'use strict';
 
 const bots = require('../repositories/bots-repositories.js');
-let config = require('../config.js');
+let config = require('../db/config');
 
-exports.get = async(req, res, next) => {
+const get = async(req, res, next) => {
     try {
         let data = await bots.get();
         res.status(200).send(data);
@@ -14,7 +14,7 @@ exports.get = async(req, res, next) => {
     }
 }
 
-exports.getById = async(req, res, next) => {
+const getById = async(req, res, next) => {
     try {
         let data = await bots.getById(req.params.id);
         res.status(200).send(data);
@@ -25,7 +25,7 @@ exports.getById = async(req, res, next) => {
     }
 }
 
-exports.post = async(req, res, next) => {
+const post = async(req, res, next) => {
     try {
         await bots.create({
             id: req.body.id,
@@ -42,7 +42,7 @@ exports.post = async(req, res, next) => {
     }
 };
 
-exports.put = async(req, res, next) => {
+const put = async(req, res, next) => {
     try {
         await bots.update(req.params.id, req.body);
         res.status(200).send({
@@ -55,15 +55,6 @@ exports.put = async(req, res, next) => {
     }
 };
 
-exports.delete = async(req, res, next) => {
-    try {
-        await bots.delete(req.body.id)
-        res.status(200).send({
-            message: 'Produto removido com sucesso!'
-        });
-    } catch (e) {
-        res.status(500).send({
-            message: 'Falha ao processar sua requisição'
-        });
-    }
-};
+module.exports = {
+    get, getById, post, put
+}

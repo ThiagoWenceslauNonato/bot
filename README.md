@@ -4,14 +4,14 @@ Trata-se de um projeto que realiza a integração de uma api.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Essas instruções farão com que você tenha uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Veja a implantação de notas sobre como implantar o projeto em um sistema ativo.
 
 ### Prerequisites
 
 Aqui darei as instruções para rodar o projeto em sua máquina
 
 ```
-Tenha instalado o node.js, mondodb server e um editor de texto para rodar o projeto, indico o Visual Studio Code.
+Tenha instalado o node.js, mondodb server e um editor de texto para rodar o projeto.
 ```
 
 ### Installing
@@ -21,7 +21,7 @@ Abaixo segue os comandos para rodar o projeto na sua máquina.
 ```
 npm install ou npm i
 ```
-O teste será realizado na ulr: localhost:8080/usuarios
+O teste será realizado na ulr: localhost:3050/messages || localhost:3050/bots
 
 ## Running the tests
 

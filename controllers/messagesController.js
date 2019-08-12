@@ -1,9 +1,9 @@
 'use strict';
 
 const messages = require('../repositories/messages-repositories.js');
-let config = require('../config.js');
+let config = require('../db/config');
 
-exports.get = async(req, res, next) => {
+const get = async(req, res, next) => {
     try {
         let data = await messages.get();
         res.status(200).send(data);
@@ -14,7 +14,7 @@ exports.get = async(req, res, next) => {
     }
 }
 
-exports.post = async(req, res, next) => {
+const post = async(req, res, next) => {
     try {
         await messages.create({
             conversationId: data.conversationId,
@@ -34,7 +34,7 @@ exports.post = async(req, res, next) => {
     }
 };
 
-exports.getById = async(req, res, next) => {
+const getById = async(req, res, next) => {
     try {
         let data = await messages.getById(req.params.id);
         res.status(200).send(data);
@@ -45,7 +45,7 @@ exports.getById = async(req, res, next) => {
     }
 }
 
-exports.getByConversatioId = async(req, res, next) => {
+const getByConversatioId = async(req, res, next) => {
     try {
         let data = await messages.getByConversatioId(req.params.conversationId);
         res.status(200).send(data);
@@ -54,4 +54,8 @@ exports.getByConversatioId = async(req, res, next) => {
             message: 'Falha ao processar sua requisição'
         });
     }
+}
+
+module.exports = {
+    get, post, getById, getByConversatioId
 }

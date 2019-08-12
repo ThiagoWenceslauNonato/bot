@@ -1,6 +1,6 @@
 'use strict';
 const mongoose = require('mongoose');
-let Messages = require('../models/messagesModel.js')
+let Messages = require('../models/messagesModel')
 
 exports.get = async(data) => {
     let res = await Messages

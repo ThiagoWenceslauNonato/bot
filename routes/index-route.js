@@ -1,7 +1,6 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
 
 router.get('/', (req, res, next) => {
     res.status(200).send({
@@ -9,5 +8,8 @@ router.get('/', (req, res, next) => {
         version: "0.0.2"
     });
 });
+
+router.use('bots', require('../routes/bots-route'))
+router.use('messages', require('../routes/messages-route'))
 
 module.exports = router;

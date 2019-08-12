@@ -1,6 +1,6 @@
 'use strict';
 const mongoose = require('mongoose');
-let Bots = require('../models/botsModel.js')
+let Bots = require('../models/botsModel')
 
 exports.get = async () => {
     let res = await Bots
